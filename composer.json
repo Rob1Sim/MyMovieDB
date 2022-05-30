@@ -1,0 +1,27 @@
+{
+    "name": "simo0156/php-crud-tvshow",
+    "description": "Une application web permettant de consulter ou modifier des séries TV",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Robin Simonneau",
+            "email": "robin.simonneau@etudiant.univ-reims.fr"
+        },
+        {
+            "name": "Gaspard Lalouette",
+            "email": "gaspard.lalouette@etudiant.univ-reims.fr"
+        }
+
+    ],
+    "scripts": {
+        "run-server" : "php -d display_errors -S localhost:8000 -t public/"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^3.8"
+    }
+}

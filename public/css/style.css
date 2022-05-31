@@ -28,15 +28,28 @@ body{
     width: 90%;
 }
 .list {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    border: solid black 1px;
+    margin: 1%;
+    height: 73%;
+    width: 75%;
+
 
 }
 .serie {
+    margin: 2%;
+    display: flex;
+    flex-direction: row;
 
 }
 .serie__image {
+    margin: 1%;
 
 }
 .serie__txt {
+    margin: 1%;
 
 }
 

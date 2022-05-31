@@ -14,7 +14,7 @@ class PosterCollection
      * @param int $id L'id du poster
      * @return Poster Le string comportenant le poster
      */
-    public static function getPosterById(int $id):Poster{
+    public static function findPosterById(int $id):Poster{
         $posters = MyPDO::getInstance()->prepare(
             <<<'SQL'
                     SELECT id, jpeg

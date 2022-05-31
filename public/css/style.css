@@ -24,8 +24,8 @@ body{
     border: solid black 1px;
     background-color: bisque;
     text-align: center;
-    height: 5%;
-    width: 90%;
+    height: 5vh;
+    width: 90vw;
 }
 .list {
     display: flex;
@@ -33,10 +33,10 @@ body{
     overflow-y: scroll;
     border: solid black 1px;
     margin: 1%;
-    height: 73%;
-    width: 75%;
-
-
+    height: 73vh;
+}
+.content{
+    width: 90%;
 }
 .serie {
     margin: 2%;

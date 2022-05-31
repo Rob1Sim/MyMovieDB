@@ -1,10 +1,9 @@
 <?php
-
 declare(strict_types=1);
 
-use HTML\AppWebPage;
 use Entity\Collection\TvShowCollection;
-use HTML\WebPage;
+use Html\WebPage;
+use Html\AppWebPage;
 
 $webPage = new AppWebPage();
 $webPage->setTitle("Series TV");

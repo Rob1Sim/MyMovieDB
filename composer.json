@@ -19,7 +19,7 @@
 
     ],
     "scripts": {
-        "run-server" : "php -d display_errors -S localhost:8000 -t public/",
+        "run-server" : "APP_DIR=\"$PWD\" php -d display_errors -d auto_prepend_file=\"$PWD/vendor/autoload.php\" -S localhost:8000 -t public/ \n",
         "test:cs": "php vendor/bin/php-cs-fixer fix --dry-run",
         "fix:cs": "php vendor/bin/php-cs-fixer fix"
     },

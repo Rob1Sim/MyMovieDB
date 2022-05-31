@@ -1,6 +1,6 @@
 <?php
 
-namespace Html;
+namespace HTML;
 
 use DateTime;
 use PhpCsFixer\Diff\Exception;

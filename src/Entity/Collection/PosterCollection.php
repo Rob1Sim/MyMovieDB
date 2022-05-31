@@ -3,6 +3,7 @@ declare(strict_types=1);
 namespace Entity\Collection;
 
 use Database\MyPdo;
+use Entity\Exception\EntityNotFoundException;
 use Entity\Poster;
 use PDO;
 
@@ -26,9 +27,10 @@ class PosterCollection
 
         $posters->execute(['idArt'=>$id]);
 
-        $posterTab = $posters->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Entity\Poster");
-
-        return $posterTab[0];
-
+        if ($posterTab = $posters->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Entity\Poster")) {
+            return $posterTab[0];
+        } else {
+            throw new EntityNotFoundException();
+        }
     }
 }

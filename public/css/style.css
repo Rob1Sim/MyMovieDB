@@ -1,0 +1,58 @@
+html,body{
+    width: 99%;
+    height: 99%;
+    margin: auto;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: .20em;
+    align-items: center;
+    background-color: bisque;
+}
+.header{
+    margin: 1%;
+    width: 90%;
+    border: solid black 1px;
+    background-color: bisque;
+    text-align: center;
+    height: 11%;
+}
+.footer {
+    margin: 1%;
+    border: solid black 1px;
+    background-color: bisque;
+    text-align: center;
+    height: 5%;
+    width: 90%;
+}
+.list {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    border: solid black 1px;
+    margin: 1%;
+    height: 73%;
+    width: 75%;
+
+
+}
+.serie {
+    margin: 2%;
+    display: flex;
+    flex-direction: row;
+
+}
+.serie__image {
+    margin: 1%;
+
+}
+.serie__txt {
+    margin: 1%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+

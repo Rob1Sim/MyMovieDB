@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Html;
+namespace HTML;
 
 class AppWebPage extends WebPage
 {

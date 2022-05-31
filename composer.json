@@ -28,5 +28,8 @@
     },
   "require": {
     "ext-pdo": "*"
-  }
+  },
+    "config": {
+        "process-timeout": 0
+    }
 }

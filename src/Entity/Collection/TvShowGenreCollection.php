@@ -17,7 +17,7 @@ class TvShowGenreCollection
 
         $genres = MyPdo::getInstance()->prepare(
             <<<'SQL'
-            SELECT id,genreid,tvshowid
+            SELECT id,genreId,tvShowId
             FROM tvshow_genre
             WHERE genreId = :idGenre
 SQL
@@ -28,7 +28,7 @@ SQL
         $tvShows = [];
 
         foreach ($tvShowGenres as $tsg){
-            $tvShows[] = TvShowCollection::findByTvShowId($tsg->getgetTvShowId());
+            $tvShows[] = TvShowCollection::findByTvShowId($tsg->getTvShowId());
         }
 
         return $tvShows;

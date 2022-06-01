@@ -5,8 +5,8 @@ declare(strict_types=1);
 use Entity\Exception\EntityNotFoundException;
 use Html\AppWebPage;
 
-if (isset($_GET['tvshowId']) && !empty(($_GET['tvshowId'])) && ctype_digit($_GET['tvshowId'])) {
-    $tvshowId = (int)$_GET['tvshowId'];
+if (isset($_GET['seasonId']) && !empty(($_GET['seasonId'])) && ctype_digit($_GET['seasonId'])) {
+    $tvshowId = (int)$_GET['seasonId'];
 } else {
     header("Location: /index.php ");
     exit;

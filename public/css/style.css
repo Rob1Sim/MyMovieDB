@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+
 html,body{
     width: 99%;
     height: 99%;
     margin: auto;
+    color: white;
+    font-family: 'Roboto', sans-serif;
 }
 body{
     display: flex;
@@ -9,29 +13,57 @@ body{
     margin: 0;
     padding: .20em;
     align-items: center;
-    background-color: bisque;
+    background-color: #2E0249;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+    transition: color 1s 5ms;
+
+}
+a:checked{
+    color: white;
+}
+
+a:hover{
+    color: #F806CC;
 }
 .header{
     margin: 1%;
     width: 90%;
-    border: solid black 1px;
-    background-color: bisque;
+    border: solid #A91079 1px;
+    border-radius: 12px;
+    background-color: #A91079;
     text-align: center;
-    height: 11%;
+    height: 9%;
+}
+
+header>h1{
+    margin: 0;
+    font-size: x-large;
+    text-align: center;
+    padding-top: 1vh;
 }
 .footer {
     margin: 1%;
-    border: solid black 1px;
-    background-color: bisque;
+    border: solid #A91079 1px;
+    border-radius: 12px;
+    background-color: #A91079;
     text-align: center;
     height: 5vh;
     width: 90vw;
+}
+
+footer>p{
+    margin: 0;
 }
 .list {
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
-    border: solid black 1px;
+    border: solid #A91079 1px;
+    border-radius: 12px;
     margin: 1%;
     height: 73vh;
 }
@@ -42,6 +74,8 @@ body{
     margin: 2%;
     display: flex;
     flex-direction: row;
+    height: 80%;
+
 
 }
 .serie__image {
@@ -52,7 +86,37 @@ body{
     margin: 1%;
     display: flex;
     flex-direction: column;
+    height: 100%;
 
 }
 
+.serie__txt>p{
+    margin: 0;
+    height: 80%;
+    overflow: scroll;
+}
 
+@media (min-width:1000px) {
+    .footer{
+        margin: 0;
+    }
+}
+
+@media (min-width: 1200px) {
+    .header{
+        margin-bottom: 0;
+    }
+
+}
+@media (min-width: 1800px) {
+
+    header>h1{
+        margin: 0;
+        padding-top: 2vh;
+        font-size: xx-large;
+    }
+    footer>p{
+        padding-top: 1.5vh;
+
+    }
+}

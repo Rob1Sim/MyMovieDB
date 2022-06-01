@@ -102,13 +102,11 @@ footer>p{
     transition: background-color 0.5s 5ms;
 }
 
-.list>*{
+
+#list__serie>*:nth-child(odd){
     flex-direction: row;
 }
-.list>*:nth-child(odd){
-    flex-direction: row;
-}
-.list>*:nth-child(even){
+#list__serie>*:nth-child(even){
     flex-direction: row-reverse;
 }
 

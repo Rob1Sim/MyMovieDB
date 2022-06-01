@@ -19,7 +19,7 @@ try {
     $string = AppWebPage::escapeString($tvshow->getName());
     $webPage->setTitle("Serie TV : $string");
 
-    $webPage->appendContent("<div class='list'>");
+    $webPage->appendContent("<div class='list' id='list__seasoné'>");
 
     $webPage->appendContent("<div class=serie__pres>");
     $webPage->appendContent("<div class='serie__image'><img src='poster.php?posterId=".$tvshow->getPosterId()."' alt='poster de la série'></div>");
@@ -35,7 +35,7 @@ try {
         $name = AppWebPage::escapeString($season->getName());
         $webPage->appendContent(
             <<<HTML
-                <div class='serie'>
+                <div class='serie' >
                     <div class="serie__image"><img src="poster.php?posterId={$season->getPosterId()}" alt='poster de la série'></div>
                     <h3 class='serie__txt'>{$name}</h3>
                 </div>

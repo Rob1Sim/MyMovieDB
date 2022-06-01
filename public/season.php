@@ -21,9 +21,9 @@ try {
 
     $webPage->appendContent("<div class=tvshow>");
     $webPage->appendContent("<div class='poster_serie'><img src='poster.php?posterId=".$tvshow->getPosterId()."' alt='poster de la série'></div>");
-    $webPage->appendContent("<div class='nom_serie'>{$tvshow->getName()}</div>");
-    $webPage->appendContent("<div class='nom_original_serie'>{$tvshow->getOriginalName()}</div>");
-    $webPage->appendContent("<div class='overview_serie'>{$tvshow->getOverview()}</div></div>");
+    $webPage->appendContent("<h3 class='nom_serie'>{$tvshow->getName()}</h3>");
+    $webPage->appendContent("<h4 class='nom_original_serie'>{$tvshow->getOriginalName()}</h4>");
+    $webPage->appendContent("<p class='overview_serie'>{$tvshow->getOverview()}</p></div>");
 
 
     $bd = Entity\Collection\SeasonCollection::findBySeasonId();

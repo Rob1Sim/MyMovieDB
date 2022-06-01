@@ -9,13 +9,23 @@ use Html\AppWebPage;
 $webPage = new AppWebPage();
 $webPage->setTitle("Series TV");
 
+//------------Liste déroulante -------
+
+$webPage->appendContent("<div class='selection'> <form method='get' action='index.php'>");
 $webPage->appendContent("<label for='select__genre'>Triez par : </label>");
-$webPage->appendContent("<select name='select__genre' class='select__genre'><option value=''>--Choisir un genre--</option>");
+$webPage->appendContent("<select  name='genre' class='select__genre'><option value='' selected disabled>--Choisir un genre--</option>");
+
+$i = 1;
 foreach (GenreCollection::findAllGenre() as $genre){
+
     $name = WebPage::escapeString($genre->getName());
-    $webPage->appendContent("<option value='$name'>$name</option>");
+    $webPage->appendContent("<option value='$i'>$name</option>");
+    $i++;
 }
-$webPage->appendContent("</select>");
+$webPage->appendContent("</select><input type='submit' value='Trier' class='section__btn'></form></div>");
+
+
+//---liste des séries
 
 $webPage->appendContent("<div class='list' id='list__serie'>");
 

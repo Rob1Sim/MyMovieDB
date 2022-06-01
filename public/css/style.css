@@ -66,7 +66,7 @@ footer>p{
 }
 
 #list__serie{
-    height: 78vh;
+    height: 75vh;
 }
 .content{
     width: 90%;
@@ -147,6 +147,17 @@ img{
     border: #F806CC solid 1px;
     transition: background-color 1s 5ms;
 
+}
+
+
+.selection>section{
+    all:unset;
+    background-color: #A91079;
+}
+
+.selection{
+    margin-top: 0.5%;
+    position: relative;
 }
 
 .btn__home>p{

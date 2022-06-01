@@ -11,6 +11,10 @@ use PDO;
 class TvShowCollection
 {
 
+    /**
+     * Donne tous les tv show
+     * @return array tableau avec tous les tv show
+     */
     public static function findAll(): array
     {
         $bd = myPDO::getInstance()->prepare(

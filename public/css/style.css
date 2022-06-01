@@ -150,14 +150,43 @@ img{
 }
 
 
-.selection>section{
-    all:unset;
+.selection>form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.selection>form>select{
+    all: unset;
+    margin-left:1% ;
+    margin-right: 1%;
+    padding-left: 0.5%;
+    padding-right: 0.5%;
     background-color: #A91079;
+    border-radius: 12px;
+    cursor: pointer;
 }
 
+.section__btn{
+    all: unset;
+    padding-left: 0.5%;
+    padding-right: 0.5%;
+    border: #F806CC solid 1px;
+    border-radius: 12px;
+    transition: background-color 0.5s 5ms;
+    cursor: pointer;
+}
+
+.section__btn:hover{
+    background-color: #F806CC;
+}
+
+
 .selection{
+    width: 100%;
     margin-top: 0.5%;
-    position: relative;
+
+
 }
 
 .btn__home>p{

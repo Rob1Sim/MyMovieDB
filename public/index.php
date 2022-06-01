@@ -13,7 +13,7 @@ $webPage->setTitle("Series TV");
 
 $webPage->appendContent("<div class='selection'> <form method='get' action='index.php'>");
 $webPage->appendContent("<label for='select__genre'>Triez par : </label>");
-$webPage->appendContent("<select  name='genre' class='select__genre'><option value='' selected disabled>--Choisir un genre--</option>");
+$webPage->appendContent("<select  name='genre' class='select__genre' required><option value='' selected disabled>--Choisir un genre--</option>");
 
 $i = 1;
 foreach (GenreCollection::findAllGenre() as $genre){

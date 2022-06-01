@@ -1,12 +1,21 @@
 <?php
 declare(strict_types=1);
 
+use Entity\Collection\GenreCollection;
 use Entity\Collection\TvShowCollection;
 use Html\WebPage;
 use Html\AppWebPage;
 
 $webPage = new AppWebPage();
 $webPage->setTitle("Series TV");
+
+$webPage->appendContent("<label for='select__genre'>Triez par : </label>");
+$webPage->appendContent("<select name='select__genre' class='select__genre'><option value=''>--Choisir un genre--</option>");
+foreach (GenreCollection::findAllGenre() as $genre){
+    $name = WebPage::escapeString($genre->getName());
+    $webPage->appendContent("<option value='$name'>$name</option>");
+}
+$webPage->appendContent("</select>");
 
 $webPage->appendContent("<div class='list' id='list__serie'>");
 

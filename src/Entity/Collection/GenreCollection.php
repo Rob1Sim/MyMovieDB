@@ -20,6 +20,7 @@ class GenreCollection
             FROM genre
 SQL
 );
+        $genres->execute();
         return $genres->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Entity\Genre");
     }
 }

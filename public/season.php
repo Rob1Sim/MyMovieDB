@@ -19,14 +19,17 @@ try {
     $string = AppWebPage::escapeString($tvshow->getName());
     $webPage->setTitle("Serie TV : $string");
 
-    $webPage->appendContent("<div class='list' id='list__seasoné'>");
+    $webPage->appendContent("<div class='list' id='list__season'>");
 
     $webPage->appendContent("<div class=serie__pres>");
     $webPage->appendContent("<div class='serie__image'><img src='poster.php?posterId=".$tvshow->getPosterId()."' alt='poster de la série'></div>");
+    $webPage->appendContent("<div class='serie__txt'>");
+    $webPage->appendContent("<div class='serie__txt__nom'>");
     $webPage->appendContent("<h3 class='nom_serie'>{$tvshow->getName()}</h3>");
     $webPage->appendContent("<h4 class='nom_original_serie'>{$tvshow->getOriginalName()}</h4>");
+    $webPage->appendContent("</div>");
     $webPage->appendContent("<p class='overview_serie'>{$tvshow->getOverview()}</p></div>");
-
+    $webPage->appendContent("</div>");
 
     $bd = Entity\Collection\SeasonCollection::findBySeasonId($tvshowId);
 
@@ -35,7 +38,7 @@ try {
         $name = AppWebPage::escapeString($season->getName());
         $webPage->appendContent(
             <<<HTML
-                <div class='serie' >
+                <div class='serie' onclick="location.href='season.php?seasonId=';">
                     <div class="serie__image"><img src="poster.php?posterId={$season->getPosterId()}" alt='poster de la série'></div>
                     <h3 class='serie__txt'>{$name}</h3>
                 </div>

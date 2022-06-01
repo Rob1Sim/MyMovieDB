@@ -18,7 +18,7 @@ try {
     $tvshow = Entity\Collection\TvShowCollection::findByTvShowId($tvshowId);
     $string = AppWebPage::escapeString($tvshow->getName());
     $webPage->setTitle("Serie TV : $string");
-
+    $webPage->appendContent("<div class='btn__home' onclick=\"location.href='/';\"><p>Accueil</p></div>");
     $webPage->appendContent("<div class='list' id='list__season'>");
 
     $webPage->appendContent("<div class=serie__pres>");

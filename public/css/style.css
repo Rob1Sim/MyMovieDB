@@ -165,7 +165,14 @@ img{
     background-color: #A91079;
     border-radius: 12px;
     cursor: pointer;
+    transition: background-color 0.5s 5ms;
+
 }
+.selection>form>select:hover{
+    background-color: #F806CC;
+
+}
+
 
 .section__btn{
     all: unset;
@@ -198,6 +205,12 @@ img{
     background-color: #F806CC;
 }
 
+@media (min-width: 800px) {
+    #list__serie{
+        height: 71vh;
+    }
+}
+
 @media (min-width:1000px) {
     .footer{
         margin: 0;
@@ -210,6 +223,9 @@ img{
 @media (min-width: 1200px) {
     .header{
         margin-bottom: 0;
+    }
+    #list__serie{
+        height: 75vh;
     }
 
 }

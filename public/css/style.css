@@ -19,34 +19,31 @@ body{
 a{
     color: white;
     text-decoration: none;
-    transition: color 1s 5ms;
+
 
 }
 a:checked{
     color: white;
 }
 
-a:hover{
-    color: #F806CC;
-}
+
 .header{
-    margin: 1%;
+    margin: 0.5%;
     width: 90%;
     border: solid #A91079 1px;
     border-radius: 12px;
     background-color: #A91079;
     text-align: center;
-    height: 9%;
+    height: 8%;
 }
 
 header>h1{
     margin: 0;
     font-size: x-large;
     text-align: center;
-    padding-top: 1vh;
 }
 .footer {
-    margin: 1%;
+    margin: 0.5%;
     border: solid #A91079 1px;
     border-radius: 12px;
     background-color: #A91079;
@@ -65,18 +62,28 @@ footer>p{
     border: solid #A91079 1px;
     border-radius: 12px;
     margin: 1%;
-    height: 73vh;
+    height: 72vh;
+}
+
+#list__serie{
+    height: 78vh;
 }
 .content{
     width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .serie {
     margin: 2%;
     display: flex;
-    flex-direction: row;
-    height: 80%;
+    height: 82%;
 
 
+}
+
+img{
+    border-radius: 12px;
 }
 .serie__image {
     margin: 1%;
@@ -92,13 +99,71 @@ footer>p{
 
 .serie__txt>p{
     margin: 0;
-    height: 80%;
+    height: 82%;
     overflow: scroll;
+}
+
+.serie,.season{
+    cursor: pointer;
+    border-radius: 12px;
+
+    transition: background-color 0.5s 5ms;
+}
+
+
+#list__serie>*:nth-child(odd){
+    flex-direction: row;
+}
+#list__serie>*:nth-child(even){
+    flex-direction: row-reverse;
+}
+
+.serie:hover,#season:hover{
+    background-color: #A91079;
+
+}
+
+.serie__pres{
+    display: flex;
+    margin: 2%;
+    height: 82%;
+}
+
+.serie__txt__nom{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.serie__txt__nom>p{
+    overflow: scroll;
+}
+
+.btn__home{
+    margin-top:0.5%;
+    padding:0.5%;
+    cursor: pointer ;
+    border-radius: 12px;
+    border: #F806CC solid 1px;
+    transition: background-color 1s 5ms;
+
+}
+
+.btn__home>p{
+    margin: 0;
+
+}
+
+.btn__home:hover{
+    background-color: #F806CC;
 }
 
 @media (min-width:1000px) {
     .footer{
         margin: 0;
+    }
+    .list{
+        margin: 0.5%;
     }
 }
 
@@ -119,4 +184,5 @@ footer>p{
         padding-top: 1.5vh;
 
     }
+
 }

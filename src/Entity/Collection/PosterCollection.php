@@ -19,13 +19,13 @@ class PosterCollection
         $posters = MyPDO::getInstance()->prepare(
             <<<'SQL'
                     SELECT id, jpeg
-                    FROM album
+                    FROM poster
                     WHERE id = :idPoster
                     
                 SQL
         );
 
-        $posters->execute(['idArt'=>$id]);
+        $posters->execute(['idPoster'=>$id]);
 
         if ($posterTab = $posters->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Entity\Poster")) {
             return $posterTab[0];

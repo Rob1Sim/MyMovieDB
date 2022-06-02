@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Entity;
@@ -25,6 +26,4 @@ class Genre
     {
         return $this->name;
     }
-
-
 }

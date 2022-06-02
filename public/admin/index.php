@@ -16,13 +16,7 @@ $page = <<<HTML
     <main>
         <div class="admin__btn__container">
             <div class="admin__btn" onclick="location.href='';">
-                <h3>Ajout</h3>
-            </div>
-            <div class="admin__btn" onclick="location.href='';">
-                <h3>Edition</h3>
-            </div>
-            <div class="admin__btn" onclick="location.href='';">
-                <h3>Suppression</h3>
+                <h3>Ajout / Edition</h3>
             </div>
         </div>
     </main>    

@@ -259,13 +259,16 @@ img{
 .admin__btn__container{
     display: flex;
     gap: 5em;
+    width: 100%;
+    justify-content: center;
 }
 
 main{
     align-items: center;
     display: flex;
     height: 30%;
-    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
 .header__admin{
@@ -276,9 +279,10 @@ main{
 }
 
 .admin__btn{
+    text-align: center;
     border: #A91079 solid 1px;
     border-radius: 30px;
-    width: 35%;
+    width: 15%;
     cursor: pointer;
     transition: background-color 1s 5ms;
 

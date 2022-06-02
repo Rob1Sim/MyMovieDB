@@ -16,15 +16,14 @@ class TvShow
     private ?int $posterId;
 
 
-    private function __construct(?int $id = null, string $ogn = "", string $hp = "", string $overview = "", ?int $pId = null)
+    private function __construct(?int $id = null, string $name = "", string $ogn = "", string $hp = "", string $overview = "", ?int $pId = null)
     {
         $this->id = $id;
-        $this->name = "";
+        $this->name = $name;
         $this->originalName = $ogn;
         $this->homePage = $hp;
         $this->overview = $overview;
         $this->posterId = $pId;
-
     }
 
     /**
@@ -142,4 +141,34 @@ SQL
         return $this;
     }
 
+    /***
+     * Met à jour le nouveau nom de l'instance dans la base de donnée
+     * @return $this
+     */
+    protected function update(): TvShow
+    {
+        $updateReq = MyPDO::getInstance()->prepare(
+            <<<'SQL'
+                    UPDATE artist
+                    SET name = :n, originalName = :orn, homePage = :hp ,overview = :over
+                    WHERE id= :idShow
+SQL
+        );
+
+        $updateReq->execute(['idShow'=>$this->id,'n'=>$this->name,'orn'=>$this->originalName,'hp'=>$this->homePage,'over'=>$this->overview]);
+
+        return $this;
+    }
+
+    /***
+     * Créer une instance de la class Artist.
+     *
+     * @param string $name Nom de la série.
+     * @param int|null $id Id de la série.
+     * @return TvShow L'artiste créé.
+     */
+    public static function create(?int $id = null, string $name, string $ogn, string $hp, string $over): TvShow
+    {
+        return new TvShow($id, $name, $ogn, $hp, $over);
+    }
 }

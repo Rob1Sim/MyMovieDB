@@ -8,12 +8,12 @@ use Entity\Exception\ParameterException;
 use Entity\TvShow;
 use Html\StringEscaper;
 
-class tvShowForm
+class TvShowForm
 {
     use StringEscaper;
 
 
-    private ?TvShow $tvShow;
+    private ?TvShow $tvShow = null;
 
     /**
      * Construit un formulaire pour ajouter/supprimer une série
@@ -42,13 +42,15 @@ class tvShowForm
     {
         $id ="";
         $name ="";
+        $oname = "";
+        $homePage = "";
+        $overview = "";
         if ($this->tvShow != null) {
             $this->tvShow->save();
             $name = self::escapeString($this->tvShow->getName());
             $oname = self::escapeString($this->tvShow->getOriginalName());
             $homePage = self::escapeString($this->tvShow->getHomePage());
             $overview = self::escapeString($this->tvShow->getOverview());
-            $poster = $this->tvShow->getPosterId();
             $id = $this->tvShow->getId();
         }
         return <<<HTML
@@ -58,9 +60,9 @@ class tvShowForm
             <input type="text" name="name" value="$name" required>
             <label for="orname">Nom original</label>
             <input type="text" name="orname" value="$oname" required>
-            <label for="homepage">Nom original</label>
+            <label for="homepage">Page de la série</label>
             <input type="text" name="homepage" value="$homePage" required>
-            <label for="overview">Nom original</label>
+            <label for="overview">Résumé</label>
             <input type="text" name="overview" value="$overview" required>
             <input type="submit" value="Enregistrer">
         </form>

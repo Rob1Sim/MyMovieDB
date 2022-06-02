@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 use Entity\Exception\EntityNotFoundException;
 use Entity\Exception\ParameterException;
-use Html\Form\tvShowForm;
+use Html\Form\TvShowForm;
 
 try {
-    $tvShow = new tvShowForm();
+    $tvShow = new TvShowForm();
     $tvShow->setEntityFromQueryString();
     $tvShow->getTvShow()->save();
     header("Location: /");

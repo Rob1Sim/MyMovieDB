@@ -149,7 +149,7 @@ SQL
     {
         $updateReq = MyPDO::getInstance()->prepare(
             <<<'SQL'
-                    UPDATE artist
+                    UPDATE tvshow
                     SET name = :n, originalName = :orn, homePage = :hp ,overview = :over
                     WHERE id= :idShow
 SQL

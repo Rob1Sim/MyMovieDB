@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Html\Form;
 
+use Entity\Exception\ParameterException;
 use Entity\TvShow;
 use Html\StringEscaper;
 
@@ -61,10 +62,34 @@ class tvShowForm
             <input type="text" name="homepage" value="$homePage" required>
             <label for="overview">Nom original</label>
             <input type="text" name="overview" value="$overview" required>
-            <input type="hidden" name="posterId" value="$poster">
             <input type="submit" value="Enregistrer">
         </form>
 HTML;
+    }
+
+
+    /***
+     * Recupère les informations du formulaire pour les ajouter en propriétées d'instances
+     * @return void
+     * @throws ParameterException
+     */
+    public function setEntityFromQueryString(): void
+    {
+        if (($name = $_POST["name"]) != null && ($orname = $_POST["orname"]) != null && ($homePage = $_POST["homepage"])!= null && ($overview = $_POST["overview"])!=null ) {
+            $name = $this->stripTagsAndTrim($name);
+            $orname = $this->stripTagsAndTrim($orname);
+            $homePage = $this->stripTagsAndTrim($homePage);
+            $overview = $this->stripTagsAndTrim($overview);
+
+            if (($id= (int)$_POST["id"]) != null && $id != 0) {
+                $this->tvShow = TvShow::create($id,$name,$orname,$homePage,$overview);
+            } else {
+                $id = null;
+                $this->tvShow = TvShow::create($id,$name,$orname,$homePage,$overview);
+            }
+        } else {
+            throw new ParameterException();
+        }
     }
 
 

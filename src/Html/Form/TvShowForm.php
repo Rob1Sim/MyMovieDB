@@ -19,9 +19,10 @@ class TvShowForm
      * Construit un formulaire pour ajouter/supprimer une série
      * @param TvShow|null $tvShow
      */
-    public function __construct(?TvShow $tvShow = null)
+    public function __construct(?TvShow $tvShow =null )
     {
-        $this->$tvShow = $tvShow;
+
+        $this->$tvShow = &$tvShow;
     }
 
     /**
@@ -54,17 +55,17 @@ class TvShowForm
             $id = $this->tvShow->getId();
         }
         return <<<HTML
-        <form action="$action" method="post">
+        <form action="$action" method="post" class="form">
             <input type="hidden" name="id" value="$id">
-            <label for="name">Nom</label>
+            <label for="name">Nom :</label>
             <input type="text" name="name" value="$name" required>
-            <label for="orname">Nom original</label>
+            <label for="orname">Nom original :</label>
             <input type="text" name="orname" value="$oname" required>
-            <label for="homepage">Page de la série</label>
+            <label for="homepage">Page de la série :</label>
             <input type="text" name="homepage" value="$homePage" required>
-            <label for="overview">Résumé</label>
+            <label for="overview">Résumé :</label>
             <input type="text" name="overview" value="$overview" required>
-            <input type="submit" value="Enregistrer">
+            <input type="submit" value="Enregistrer" class="form__button">
         </form>
 HTML;
     }
@@ -93,6 +94,7 @@ HTML;
             throw new ParameterException();
         }
     }
+
 
 
 }

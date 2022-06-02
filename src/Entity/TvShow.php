@@ -187,5 +187,8 @@ SQL
 
         return $this;
     }
-
+    public function __toString(): string
+    {
+        return "Je ne sais pas pourquoi quand je met ça ici ça marche mais ça marche";
+    }
 }

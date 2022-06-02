@@ -16,17 +16,17 @@ $webPage->appendContent("<h1>Ajouter/Modifier</h1>");
 
 try {
     $tvshow = null;
-    if (isset($_GET["artistId"]) && ctype_digit($_GET["artistId"])) {
-        $tvshow = TvShowCollection::findByTvShowId((int)$_GET["artistId"]);
+    if (isset($_GET["tvshowId"]) && ctype_digit($_GET["tvshowId"])) {
+        $tvshow = TvShowCollection::findByTvShowId((int)$_GET["tvshowId"]);
     }
-
     $artisteForm = new TvShowForm($tvshow);
     $form = $artisteForm->getHtmlForm("save-form.php");
 
     $webPage->appendContent($form);
 
     echo $webPage->toHTML();
-} catch (ParameterException) {
+} catch (Error $e) {
+    echo $e;
     http_response_code(400);
 } catch (EntityNotFoundException) {
     http_response_code(404);

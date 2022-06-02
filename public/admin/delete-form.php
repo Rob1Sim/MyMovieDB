@@ -21,7 +21,9 @@ try {
         $season->delete();
         header("Location: /");
     } elseif (isset($_GET["epId"]) && ctype_digit($_GET["epId"])) {
-        //TODO: Faire la class EpisodeCollection et la méthode findByEpisodeID
+        $season = \Entity\Collection\EpisodeCollection::findByEpisodeId((int)$_GET["epId"]);
+        $season= $season[0];
+        $season->delete();
         header("Location: /");
 
     } else{

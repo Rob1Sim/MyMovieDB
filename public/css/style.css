@@ -105,6 +105,7 @@ img{
     display: flex;
     flex-direction: column;
     height: 100%;
+    width: 100%;
 
 }
 
@@ -338,3 +339,9 @@ input[type=text]{
     gap: 0.5em;
 }
 
+/*-----------Episode ----------*/
+
+.episode{
+margin-bottom: 5%;
+margin-left: 1%;
+}

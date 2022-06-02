@@ -11,6 +11,8 @@ use Html\WebPage;
 $webPage = new WebPage();
 
 $webPage->appendCssUrl('../css/style.css');
+$webPage->setTitle("Ajouter/Modifier");
+$webPage->appendContent("<h1>Ajouter/Modifier</h1>");
 
 try {
     $tvshow = null;

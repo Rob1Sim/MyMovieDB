@@ -47,7 +47,7 @@ class Episode
      */
     public function getOverview(): string
     {
-        return $this->overviewr;
+        return $this->overview;
     }
 
     /**
@@ -56,7 +56,7 @@ class Episode
      */
     public function getEpisodeNumber(): int
     {
-        return $this->episodeNumer;
+        return $this->episodeNumber;
     }
 
     /**

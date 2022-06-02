@@ -5,14 +5,15 @@ declare(strict_types=1);
 use Entity\Exception\EntityNotFoundException;
 use Html\AppWebPage;
 
-if (isset($_GET['seasonId']) && !empty(($_GET['seasonId'])) && ctype_digit($_GET['seasonId'])) {
-    $seasonId = (int)$_GET['seasonId'];
-} else {
-    header("Location: /index.php ");
-    exit;
-}
 
 try {
+    if (isset($_GET['seasonId']) && !empty(($_GET['seasonId'])) && ctype_digit($_GET['seasonId'])) {
+        $seasonId = (int)$_GET['seasonId'];
+    } else {
+        header("Location: /index.php ");
+        exit;
+    }
+
     $webPage = new AppWebPage();
 
     $season = Entity\Collection\SeasonCollection::findBySeasonId($seasonId);
@@ -28,7 +29,7 @@ try {
     $webPage->appendContent("<div class='serie__image'><img src='poster.php?posterId=".$season->getPosterId()."' alt='poster de la série'></div>");
     $webPage->appendContent("<div class='serie__txt'>");
     $webPage->appendContent("<div class='serie__txt__nom'>");
-    $webPage->appendContent("<h3 class='nom_serie'><a href='season.php?seasonId={$seasonId}'</h3>");
+    $webPage->appendContent("<h3 class='nom_serie'><a href='season.php?showId={$season}'</h3>");
     $webPage->appendContent("<h4 class='nom_original_serie'>{$season->getName()}</h4>");
     $webPage->appendContent("</div></div</div");
 

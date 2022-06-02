@@ -22,7 +22,7 @@ try {
 
     $webPage->appendContent("<div class='btn__home' onclick=\"location.href='/';\"><p>Accueil</p></div>");
 
-    if ($bd = Entity\Collection\SeasonCollection::findBySeasonId($tvshowId)){
+    if ($bd = Entity\Collection\SeasonCollection::findByTvShowId($tvshowId)){
         $webPage->appendContent("<div class='list' id='list__season'>");
 
         $webPage->appendContent("<div class=serie__pres>");
@@ -58,7 +58,7 @@ HTML);
             $name = AppWebPage::escapeString($season->getName());
             $webPage->appendContent(
                 <<<HTML
-                <div class='serie' onclick="location.href='season.php?showId=';">
+                <div class='serie' onclick="location.href='episode.php?seasonId={$season->getId()}';">
                     <div class="serie__image"><img src="poster.php?posterId={$season->getPosterId()}" alt='poster de la série'></div>
                     <h3 class='serie__txt'>{$name}</h3>
                 </div>

@@ -15,7 +15,7 @@ class SeasonCollection
      * @param int $id id de la série
      * @return array<Season> Tableau de saison
      */
-    public static function findBySeasonId(int $id):array{
+    public static function findByTvShowId(int $id):array{
 
         $seasons = MyPdo::getInstance()->prepare(
             <<<'SQL'
@@ -28,5 +28,20 @@ SQL
         $seasons->execute(['id'=>$id]);
 
         return $seasons->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Entity\Season");
+    }
+
+    public static function findBySeasonId(int $id): Season{
+
+        $seasons = MyPdo::getInstance()->prepare(
+            <<<'SQL'
+            SELECT id, tvShowId, name, seasonNumber, posterId
+            FROM season
+            WHERE id = :id
+                
+SQL
+        );
+        $seasons->execute(['id'=>$id]);
+
+        return $seasons->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Entity\Season")[0];
     }
 }

@@ -91,7 +91,7 @@ class TvShow
 
 
     /***
-     * Supprime l'instance de la base de donnéees
+     * Supprime l'instance de la base de données
      * @return $this
      */
     public function delete(): TvShow
@@ -111,7 +111,7 @@ SQL
     }
 
     /***
-     * Insert une ligne dans la base de donnée
+     * Insert une ligne dans la base de données
      * @return $this
      */
     protected function insert(): TvShow
@@ -142,7 +142,7 @@ SQL
     }
 
     /***
-     * Met à jour le nouveau nom de l'instance dans la base de donnée
+     * Met à jour le nouveau nom de l'instance dans la base de données
      * @return $this
      */
     protected function update(): TvShow
@@ -161,7 +161,7 @@ SQL
     }
 
     /***
-     * Créer une instance de la class Artist.
+     * Créée une instance de la class Artist.
      *
      * @param string $name Nom de la série.
      * @param int|null $id Id de la série.
@@ -173,7 +173,7 @@ SQL
     }
 
     /***
-     * Met à Jour ou créer une donnée de l'instance dans la base de donnée.
+     * Met à Jour ou ajoute une donnée de l'instance dans la base de données.
      *
      * @return $this
      */
@@ -187,8 +187,12 @@ SQL
 
         return $this;
     }
+
+    /**
+     * @return string
+     */
     public function __toString(): string
     {
-        return "Je ne sais pas pourquoi quand je met ça ici ça marche mais ça marche";
+        return "Je ne sais pas pourquoi quand je mets ça ici ça marche";
     }
 }

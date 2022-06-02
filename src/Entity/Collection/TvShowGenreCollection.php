@@ -9,8 +9,8 @@ use PDO;
 class TvShowGenreCollection
 {
     /***
-     * Recupère tous toutes les séries par un genre donnée
-     * @param int $id Id du genre a recherché
+     * Recupère toutes les séries par un genre donné
+     * @param int $id Id du genre à rechercher
      * @return array<TvShow>
      */
     public static function findTvShowByGenreId(int $id):array{

@@ -70,7 +70,7 @@ class Episode
 
 
     /***
-     * Supprime l'instance de la base de donnéees
+     * Supprime l'instance de la base de données
      * @return $this
      */
     public function delete(): Episode

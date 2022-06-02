@@ -9,7 +9,7 @@ use PDO;
 class GenreCollection
 {
     /***
-     * Recupère tous les genre que les séries peuvent avoir
+     * Recupère tous les genres que les séries peuvent avoir
      * @return array<Genre>
      */
     public static function findAllGenre():array{

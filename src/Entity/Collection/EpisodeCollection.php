@@ -9,9 +9,9 @@ use PDO;
 class EpisodeCollection
 {
     /***
-     * Recupère un tableau d'episode par saison
+     * Recupère un tableau d'episodes par saison
      * @param int $id id de la saison
-     * @return array<Episode> Tableau d'episode
+     * @return array<Episode> Tableau d'episodes
      */
     public static function findByEpisodeId(int $id):array
     {

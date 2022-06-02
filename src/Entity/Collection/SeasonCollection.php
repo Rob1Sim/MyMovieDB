@@ -30,6 +30,11 @@ SQL
         return $seasons->fetchAll(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, "Entity\Season");
     }
 
+    /**
+     * Donne la saison correspondant à l'id donné en paramètre
+     * @param int $id id de la saison recherchée
+     * @return Season saison correspondant à l'id
+     */
     public static function findBySeasonId(int $id): Season{
 
         $seasons = MyPdo::getInstance()->prepare(

@@ -6,12 +6,19 @@ namespace Html;
 
 class AppWebPage extends WebPage
 {
+    /**
+     * @param string $title
+     */
     public function __construct(string $title = "")
     {
         parent::__construct($title);
         $this->appendCssUrl("css/style.css");
     }
 
+    /**
+     * Génère la page web finale
+     * @return string
+     */
     public function toHTML(): string
     {
         $res =  <<<HTML

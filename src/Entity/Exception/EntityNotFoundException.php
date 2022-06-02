@@ -7,7 +7,7 @@ namespace Entity\Exception;
 use OutOfBoundsException;
 
 /***
- * S'occupe de d'afficher les problème si une entité n'est pas créer
+ * S'occupe d'afficher les problèmes si une entitée n'est pas créée
  */
 class EntityNotFoundException extends OutOfBoundsException
 {

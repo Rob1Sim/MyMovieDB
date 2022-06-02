@@ -70,7 +70,7 @@ class Season
 
 
     /***
-     * Supprime l'instance de la base de donnéees
+     * Supprime l'instance de la base de données
      * @return $this
      */
     public function delete(): Season
@@ -89,6 +89,9 @@ SQL
         return $this;
     }
 
+    /**
+     * @return string
+     */
     public function __toString(): string
     {
         return "Je ne sais pas pourquoi quand je met ça ici ça marche mais ça marche";

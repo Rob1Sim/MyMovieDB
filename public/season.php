@@ -25,10 +25,22 @@ try {
     $webPage->appendContent("<div class='serie__image'><img src='poster.php?posterId=".$tvshow->getPosterId()."' alt='poster de la série'></div>");
     $webPage->appendContent("<div class='serie__txt'>");
     $webPage->appendContent("<div class='serie__txt__nom'>");
-    $webPage->appendContent("<h3 class='nom_serie'>{$tvshow->getName()}</h3>");
-    $webPage->appendContent("<h4 class='nom_original_serie'>{$tvshow->getOriginalName()}</h4>");
+
+    $name = \Html\WebPage::escapeString($tvshow->getName());
+    $oname = \Html\WebPage::escapeString($tvshow->getOriginalName());
+    $overview = \Html\WebPage::escapeString($tvshow->getOverview());
+    $idShow = $tvshow->getId();
+
+    $webPage->appendContent("<h3 class='nom_serie'>$name</h3>");
+    $webPage->appendContent("<h4 class='nom_original_serie'>$oname</h4>");
     $webPage->appendContent("</div>");
-    $webPage->appendContent("<p class='overview_serie'>{$tvshow->getOverview()}</p></div>");
+    $webPage->appendContent("<p class='overview_serie'>$overview</p>");
+    $webPage->appendContent(<<<HTML
+                <div class="admin__btn" onclick="location.href='admin/delete-form.php?showId=$idShow';">
+                    <p>Supprimer</p>
+                </div>
+           </div> 
+HTML);
     $webPage->appendContent("</div>");
 
     $bd = Entity\Collection\SeasonCollection::findBySeasonId($tvshowId);

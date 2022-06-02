@@ -295,3 +295,13 @@ main{
 .admin__btn>h3{
     margin: 1em;
 }
+
+.admin__btn>p{
+    margin: 0.5em;
+}
+
+@media (max-width: 800px) {
+    .admin__btn{
+        width: 60%;
+    }
+}

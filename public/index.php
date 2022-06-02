@@ -35,12 +35,12 @@ $webPage->appendContent("<div class='list' id='list__serie'>");
 if (isset($_GET["genre"]) && ctype_digit($_GET["genre"])) {
     foreach (TvShowGenreCollection::findTvShowByGenreId((int)$_GET["genre"]) as $show) {
         $idShow = $show->getId();
-        $webPage->appendContent("<div class='serie'  onclick=\"location.href='season.php?seasonId=$idShow';\" ><div class='serie__image'><img src='poster.php?posterId=".$show->getPosterId()."' alt='poster de la série'></div> <div class='serie__txt'><h3>".WebPage::escapeString("{$show->getName()}")."</h3><p>".$show->getOverview()."</p></div></div>");
+        $webPage->appendContent("<div class='serie'  onclick=\"location.href='season.php?showId=$idShow';\" ><div class='serie__image'><img src='poster.php?posterId=".$show->getPosterId()."' alt='poster de la série'></div> <div class='serie__txt'><h3>".WebPage::escapeString("{$show->getName()}")."</h3><p>".$show->getOverview()."</p></div></div>");
     }
 } else {
     foreach (TvShowCollection::findAll() as $show) {
         $idShow = $show->getId();
-        $webPage->appendContent("<div class='serie'  onclick=\"location.href='season.php?seasonId=$idShow';\" ><div class='serie__image'><img src='poster.php?posterId=".$show->getPosterId()."' alt='poster de la série'></div> <div class='serie__txt'><h3>".WebPage::escapeString("{$show->getName()}")."</h3><p>".$show->getOverview()."</p></div></div>");
+        $webPage->appendContent("<div class='serie'  onclick=\"location.href='season.php?showId=$idShow';\" ><div class='serie__image'><img src='poster.php?posterId=".$show->getPosterId()."' alt='poster de la série'></div> <div class='serie__txt'><h3>".WebPage::escapeString("{$show->getName()}")."</h3><p>".$show->getOverview()."</p></div></div>");
     }
 }
 $webPage->appendContent("</div>");

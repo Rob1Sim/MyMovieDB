@@ -5,8 +5,8 @@ declare(strict_types=1);
 use Entity\Exception\EntityNotFoundException;
 use Html\AppWebPage;
 
-if (isset($_GET['seasonId']) && !empty(($_GET['seasonId'])) && ctype_digit($_GET['seasonId'])) {
-    $tvshowId = (int)$_GET['seasonId'];
+if (isset($_GET['showId']) && !empty(($_GET['showId'])) && ctype_digit($_GET['showId'])) {
+    $tvshowId = (int)$_GET['showId'];
 } else {
     header("Location: /index.php ");
     exit;
@@ -58,7 +58,7 @@ HTML);
             $name = AppWebPage::escapeString($season->getName());
             $webPage->appendContent(
                 <<<HTML
-                <div class='serie' onclick="location.href='season.php?seasonId=';">
+                <div class='serie' onclick="location.href='season.php?showId=';">
                     <div class="serie__image"><img src="poster.php?posterId={$season->getPosterId()}" alt='poster de la série'></div>
                     <h3 class='serie__txt'>{$name}</h3>
                 </div>

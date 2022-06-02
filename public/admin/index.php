@@ -16,8 +16,8 @@ $webPage->appendContent("<h1>Ajouter/Modifier</h1>");
 
 try {
     $tvshow = null;
-    if (isset($_GET["tvshowId"]) && ctype_digit($_GET["tvshowId"])) {
-        $tvshow = TvShowCollection::findByTvShowId((int)$_GET["tvshowId"]);
+    if (isset($_GET["showId"]) && ctype_digit($_GET["showId"])) {
+        $tvshow = TvShowCollection::findByTvShowId((int)$_GET["showId"]);
     }
     $artisteForm = new TvShowForm($tvshow);
     $form = $artisteForm->getHtmlForm("save-form.php");

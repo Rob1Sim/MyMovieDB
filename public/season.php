@@ -40,8 +40,13 @@ try {
         $webPage->appendContent("</div>");
         $webPage->appendContent("<p class='overview_serie'>$overview</p>");
         $webPage->appendContent(<<<HTML
-                <div class="admin__btn" onclick="location.href='admin/delete-form.php?showId=$idShow';">
-                    <p>Supprimer</p>
+                <div class="btn__bar">
+                    <div class="admin__btn" onclick="location.href='admin/delete-form.php?showId=$idShow';">
+                        <p>Supprimer</p>
+                    </div>
+                    <div class="admin__btn" onclick="location.href='admin/index.php?showId=$idShow';">
+                        <p>Modifier</p>
+                    </div>
                 </div>
            </div> 
 HTML);
@@ -78,8 +83,13 @@ HTML
         $webPage->appendContent("</div>");
         $webPage->appendContent("<p class='overview_serie'>$overview</p>");
         $webPage->appendContent(<<<HTML
-                <div class="admin__btn" onclick="location.href='admin/delete-form.php?showId=$idShow';">
-                    <p>Supprimer</p>
+                <div class="btn__bar">
+                    <div class="admin__btn" onclick="location.href='admin/delete-form.php?showId=$idShow';">
+                        <p>Supprimer</p>
+                    </div>
+                    <div class="admin__btn" onclick="location.href='admin/index.php?showId=$idShow';">
+                        <p>Modifier</p>
+                    </div>
                 </div>
            </div> 
 HTML);

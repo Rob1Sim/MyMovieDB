@@ -333,3 +333,8 @@ input[type=text]{
     background-color: #F806CC;
 }
 
+.btn__bar{
+    display: flex;
+    gap: 0.5em;
+}
+

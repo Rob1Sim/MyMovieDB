@@ -16,8 +16,15 @@ class TvShow
     private ?int $posterId;
 
 
-    private function __construct(?int $id = null,string $name = "",string $ogn = "",string $hp = "", string $overview = "", ?int $pId = null)
+    private function __construct(?int $id = null, string $ogn = "", string $hp = "", string $overview = "", ?int $pId = null)
     {
+        $this->id = $id;
+        $this->name = "";
+        $this->originalName = $ogn;
+        $this->homePage = $hp;
+        $this->overview = $overview;
+        $this->posterId = $pId;
+
     }
 
     /**

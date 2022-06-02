@@ -13,6 +13,7 @@ $webPage = new WebPage();
 $webPage->appendCssUrl('../css/style.css');
 $webPage->setTitle("Ajouter/Modifier");
 $webPage->appendContent("<h1>Ajouter/Modifier</h1>");
+$webPage->appendContent("<div class='btn__home' onclick=\"location.href='/';\"><p>Accueil</p></div>");
 
 try {
     $tvshow = null;

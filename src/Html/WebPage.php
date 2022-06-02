@@ -13,11 +13,13 @@ class WebPage
     private string $title = "";
     private string $body = "";
 
+    /**
+     * @param string $title
+     */
     public function __construct(string $title = "")
     {
         $this->title = $title;
     }
-
     /**
      * @return string
      */
@@ -51,7 +53,7 @@ class WebPage
     }
 
     /**
-     * Ajoute du contenue au Head
+     * Ajoute du contenu au Head
      * @param string $content
      * @return void
      */
@@ -92,7 +94,7 @@ class WebPage
     }
 
     /**
-     * Ajoute le liens vers un script
+     * Ajoute le lien vers un script
      * @param string $url
      * @return void
      */
@@ -102,7 +104,7 @@ class WebPage
     }
 
     /**
-     * Ajoute du contenue dans le body
+     * Ajoute du contenu dans le body
      * @param string $content
      * @return void
      */
@@ -112,7 +114,7 @@ class WebPage
     }
 
     /**
-     * Génère la page web final
+     * Génère la page web finale
      * @return string
      */
     public function toHTML(): string

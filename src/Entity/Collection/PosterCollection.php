@@ -11,9 +11,9 @@ use PDO;
 class PosterCollection
 {
     /***
-     * Recherche dans la base de données les poster celon l'id passé en paramètres
+     * Recherche dans la base de données les posters selon l'id passé en paramètre
      * @param int $id L'id du poster
-     * @return Poster Le string comportenant le poster
+     * @return Poster Le string comportant le poster
      */
     public static function findPosterById(int $id):Poster{
         $posters = MyPDO::getInstance()->prepare(

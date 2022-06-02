@@ -9,7 +9,7 @@ use Entity\Exception\ParameterException;
 trait StringEscaper
 {
     /**
-     * Encode avec les charactère spéciaux html, un string
+     * Encode avec les charactères spéciaux html, un string
      * @param string $string
      * @return string
      */
@@ -24,7 +24,7 @@ trait StringEscaper
 
     /**
      * Nettoie une chaîne de charactère
-     * @param string|null $string chaîne de charactère a netoyyer
+     * @param string|null $string chaîne de charactère à netoyer
      * @return string
      */
     public function stripTagsAndTrim(?string $string): string

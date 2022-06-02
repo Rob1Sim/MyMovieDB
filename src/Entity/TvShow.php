@@ -1,11 +1,14 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Entity;
 
+use Database\MyPdo;
+
 class TvShow
 {
-    private int $id;
+    private ?int $id;
     private string $name;
     private string $originalName;
     private string $homePage;
@@ -14,9 +17,9 @@ class TvShow
 
     /**
      * Getter de l'id
-     * @return int
+     * @return ?int
      */
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
     }
@@ -65,4 +68,35 @@ class TvShow
     {
         return $this->posterId;
     }
+
+    /**
+     * Setter de la propriété id
+     * @param ?int $id
+     */
+    private function setId(?int $id): void
+    {
+        $this->id = $id;
+    }
+
+
+    /***
+     * Supprime l'instance de la base de donnéees
+     * @return $this
+     */
+    public function delete(): TvShow
+    {
+        $deleteReq = MyPDO::getInstance()->prepare(
+            <<<'SQL'
+                    DELETE FROM tvshow
+                    WHERE id= :idS
+SQL
+        );
+
+        $deleteReq->execute(['idS'=>$this->id]);
+
+        $this->setId(null);
+
+        return $this;
+    }
+
 }

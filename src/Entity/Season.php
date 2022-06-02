@@ -4,28 +4,30 @@ declare(strict_types=1);
 
 namespace Entity;
 
+use Database\MyPdo;
+
 class Season
 {
-    private int $id;
-    private int $tvShowId;
+    private ?int $id;
+    private ?int $tvShowId;
     private string $name;
     private int $seasonNumber;
     private ?int $posterId;
 
     /**
      * Getter de l'id
-     * @return int
+     * @return ?int
      */
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
     }
 
     /**
      * Getter du tvShowId
-     * @return int
+     * @return int|null
      */
-    public function getTvShowId(): int
+    public function getTvShowId(): ?int
     {
         return $this->tvShowId;
     }
@@ -57,5 +59,33 @@ class Season
         return $this->posterId;
     }
 
+    /**
+     * Setter de la propriété id
+     * @param ?int $id
+     */
+    private function setId(?int $id): void
+    {
+        $this->id = $id;
+    }
 
+
+    /***
+     * Supprime l'instance de la base de donnéees
+     * @return $this
+     */
+    public function delete(): Season
+    {
+        $deleteReq = MyPDO::getInstance()->prepare(
+            <<<'SQL'
+                    DELETE FROM season
+                    WHERE id= :idS
+SQL
+        );
+
+        $deleteReq->execute(['idS'=>$this->id]);
+
+        $this->setId(null);
+
+        return $this;
+    }
 }

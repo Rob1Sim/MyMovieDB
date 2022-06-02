@@ -15,6 +15,11 @@ class TvShow
     private string $overview;
     private ?int $posterId;
 
+
+    private function __construct(?int $id = null,string $name = "",string $ogn = "",string $hp = "", string $overview = "", ?int $pId = null)
+    {
+    }
+
     /**
      * Getter de l'id
      * @return ?int
@@ -95,6 +100,37 @@ SQL
         $deleteReq->execute(['idS'=>$this->id]);
 
         $this->setId(null);
+
+        return $this;
+    }
+
+    /***
+     * Insert une ligne dans la base de donnée
+     * @return $this
+     */
+    protected function insert(): TvShow
+    {
+        $insertReq = MyPDO::getInstance()->prepare(
+            <<<'SQL'
+                    INSERT INTO tvshow (name,originalName,homePage,overview,posterId) VALUES
+                    (:nomArt,:orName,:hPage,:over,:pId)
+SQL
+        );
+
+        $insertReq->execute(['nomArt'=>$this->name,'orName'=>$this->originalName,'hPage'=>$this->homePage,'over'=>$this->overview,'pId'=>$this->posterId]);
+
+        $newId = MyPDO::getInstance()->prepare(
+            <<<'SQL'
+                    SELECT id 
+                    from tvshow
+                    WHERE name = :nomShow;
+SQL
+        );
+
+        $newId->execute(['nomShow'=>$this->name]);
+
+        $this->setId((int)$newId->fetch()["id"]);
+
 
         return $this;
     }

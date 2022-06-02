@@ -16,7 +16,7 @@ class TvShow
     private ?int $posterId;
 
 
-    private function __construct(?int $id = null, string $name = "", string $ogn = "", string $hp = "", string $overview = "", ?int $pId = null)
+    private function __construct(?int $id = null, string $name = "", string $ogn = "", string $hp = "", string $overview = "", ?int $pId = 999)
     {
         $this->id = $id;
         $this->name = $name;
@@ -171,4 +171,21 @@ SQL
     {
         return new TvShow($id, $name, $ogn, $hp, $over);
     }
+
+    /***
+     * Met à Jour ou créer une donnée de l'instance dans la base de donnée.
+     *
+     * @return $this
+     */
+    public function save(): TvShow
+    {
+        if ($this->id == null) {
+            $this->insert();
+        } else {
+            $this->update();
+        }
+
+        return $this;
+    }
+
 }

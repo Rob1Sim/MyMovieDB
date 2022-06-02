@@ -193,6 +193,7 @@ img{
     border-radius: 12px;
     transition: background-color 0.5s 5ms;
     cursor: pointer;
+    margin-right: 1%;
 }
 
 .section__btn:hover{
@@ -282,6 +283,7 @@ main{
     text-align: center;
     border: #A91079 solid 1px;
     border-radius: 30px;
+    width: fit-content;
     width: fit-content;
     cursor: pointer;
     transition: background-color 1s 5ms;

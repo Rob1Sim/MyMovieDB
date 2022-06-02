@@ -25,7 +25,8 @@ foreach (GenreCollection::findAllGenre() as $genre) {
 }
 $webPage->appendContent("<option value='aucun'>Aucun</option>");
 
-$webPage->appendContent("</select><input type='submit' value='Trier' class='section__btn'></form></div>");
+$webPage->appendContent("</select><input type='submit' value='Trier' class='section__btn'>");
+$webPage->appendContent("</select><div  onclick=\"location.href='/admin/';\" class='section__btn'>Ajouter</div></form></div>");
 
 
 //---liste des séries

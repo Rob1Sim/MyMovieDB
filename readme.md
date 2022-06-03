@@ -17,21 +17,25 @@ Le but du projet est de créer une application web permettant de consulter et de
 
 ---
 📂public :   
+┃ ┣ 📂admin  
+┃ ┃ ┗ 📜index.php  
 ┃ ┗ 📜index.php  
 📂src  
+┃ ┣ 📂Entity  
 ┃ ┣ 📂Database  
 ┃ ┃ ┗ 📜MyPdo.php  
 ┃ ┗ 📂HTML  
+┃   ┣ 📜AppWebPage.php 
 ┃   ┗ 📜webpage.php    
 📂vendor  
 ┣ 📜README.md  
-┗ 📜composer.json  
-
+┣ 📜composer.json  
+┗ 📜composer.lock  
 
 - public : Contient les fichiers accesible depuis le navigateur
 - src : Contients les class qui s'occupe de récupèrer et traiter les donnée
 - vendor : fichiers de composer qui gère les dépendances
-
+- Entity : Contient toutes les classes qui représente les entitées de la base de donnée
 
 ### Mise en route :
 

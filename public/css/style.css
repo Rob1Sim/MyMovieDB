@@ -74,6 +74,7 @@ footer>p{
     border-radius: 12px;
     margin: 1%;
     height: 72vh;
+    min-width: 60%;
 }
 
 #list__serie{
@@ -109,9 +110,15 @@ img{
 
 }
 
+.serie__txt>h3{
+    margin-bottom: 1.2%;
+    margin-top: 1.2%;
+
+}
+
 .serie__txt>p{
     margin: 0;
-    height: 82%;
+    max-height: 75%;
     overflow: scroll;
 }
 
@@ -139,12 +146,17 @@ img{
     display: flex;
     margin: 2%;
     height: 82%;
+    min-width: 70%;
 }
 
 .serie__txt__nom{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    width: 95%;
+}
+.serie__txt__nom>h3{
+    flex-shrink: 2;
 }
 
 .serie__txt__nom>p{
@@ -216,6 +228,11 @@ img{
 
 .btn__home:hover{
     background-color: #F806CC;
+}
+@media (max-width: 400px) {
+    #list__serie{
+        height: 72vh;
+    }
 }
 
 @media (min-width: 800px) {
@@ -344,4 +361,12 @@ input[type=text]{
 .episode{
 margin-bottom: 5%;
 margin-left: 1%;
+}
+
+.link{
+    transition: color 0.5s 5ms;
+}
+
+.link:hover{
+    color: #F806CC;
 }

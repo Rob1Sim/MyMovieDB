@@ -11,7 +11,7 @@ class TvShow
     private ?int $id;
     private string $name;
     private string $originalName;
-    private string $homePage;
+    private string $homepage;
     private string $overview;
     private ?int $posterId;
 
@@ -21,7 +21,7 @@ class TvShow
         $this->id = $id;
         $this->name = $name;
         $this->originalName = $ogn;
-        $this->homePage = $hp;
+        $this->homepage = $hp;
         $this->overview = $overview;
         $this->posterId = $pId;
     }
@@ -68,7 +68,7 @@ class TvShow
      */
     public function getHomePage(): string
     {
-        return $this->homePage;
+        return $this->homepage;
     }
 
     /**
@@ -150,12 +150,12 @@ SQL
         $updateReq = MyPDO::getInstance()->prepare(
             <<<'SQL'
                     UPDATE tvshow
-                    SET name = :n, originalName = :orn, homePage = :hp ,overview = :over
+                    SET name = :n, originalName = :orn, homepage = :hp ,overview = :over
                     WHERE id= :idShow
 SQL
         );
 
-        $updateReq->execute(['idShow'=>$this->id,'n'=>$this->name,'orn'=>$this->originalName,'hp'=>$this->homePage,'over'=>$this->overview]);
+        $updateReq->execute(['idShow'=>$this->id,'n'=>$this->name,'orn'=>$this->originalName,'hp'=>$this->homepage,'over'=>$this->overview]);
 
         return $this;
     }

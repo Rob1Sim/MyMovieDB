@@ -55,6 +55,9 @@ HTML);
 
         foreach ($bd as $season) {
             $poster = $season->getPosterId();
+            if ($poster == null){
+                $poster = 999;
+            }
             $name = AppWebPage::escapeString($season->getName());
             $webPage->appendContent(
                 <<<HTML

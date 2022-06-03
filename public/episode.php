@@ -32,11 +32,12 @@ try {
 
     $show = \Entity\Collection\TvShowCollection::findByTvShowId($season->getTvShowId());
 
-    echo $show->getHomePage();
+    $hp = $show->getHomePage();
     $name = \Html\WebPage::escapeString($show->getName());
     $nameS = \Html\WebPage::escapeString($season->getName());
     $seasonId = $season->getId();
-    $webPage->appendContent("<h3 class='nom_original_serie'><a href='season.php?showId={$show->getId()}'>{$name}</a></h3>");
+    //$webPage->appendContent("<h3 class='nom_original_serie'><a class ='link' href='season.php?showId={$show->getId()}'>{$name}</a></h3>");
+    $webPage->appendContent("<h3 class='nom_original_serie'><a class ='link' href=$hp>{$name}</a></h3>");
     $webPage->appendContent("<h3 class='nom_original_serie'>{$nameS}</h3>");
     $webPage->appendContent("");
     $webPage->appendContent(

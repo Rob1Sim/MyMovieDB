@@ -19,10 +19,10 @@ class TvShowForm
      * Construit un formulaire pour ajouter/supprimer une série
      * @param TvShow|null $tvShow
      */
-    public function __construct(?TvShow $tvShow =null )
+    public function __construct(?TvShow $tvShow = null )
     {
 
-        $this->$tvShow = &$tvShow;
+        $this->tvShow = $tvShow;
     }
 
     /**
